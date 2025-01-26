@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Serve static files from the 'public' directory
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public')); // Ensure 'public' is the correct directory
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });

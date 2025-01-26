@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        fetch('/submit-order', {
+        fetch('http://localhost:3000/submit-order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
