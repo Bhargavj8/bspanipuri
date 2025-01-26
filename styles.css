@@ -1,0 +1,294 @@
+/* Basic Reset */
+body, h1, h2, h3, ul, li, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to right, #ffefba, #ffffff);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h2 {
+    color: #ff6f61;
+    font-size: 1.5em;
+}
+
+/* Owner Login Form Styling */
+.owner-login {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.owner-login form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.owner-login input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.owner-login button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.owner-login button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content Styling */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-section {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 50%; /* Adjust width as needed */
+    max-width: 600px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center; /* Center-align text */
+}
+
+.menu-section:hover {
+    transform: translateY(-10px);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #eee;
+}
+
+ul li:hover {
+    background-color: #f1f1f1;
+}
+
+ul li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #ff6f61;
+}
+
+ul li .item-details {
+    font-weight: bold;
+    color: #333;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+ul li .control-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    display: none;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.add-initial {
+    background-color: #ff6f61;
+    color: #fff;
+}
+
+button.add {
+    background-color: #28a745;
+    color: #fff;
+    width: 40px;
+}
+
+button.remove {
+    background-color: #dc3545;
+    color: #fff;
+    width: 40px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Go to Cart Button */
+#go-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#go-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Cart Section */
+#cart {
+    margin-top: 30px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cart h2 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+#cart-items li {
+    margin: 10px 0;
+}
+
+#confirm-order {
+    display: block;
+    width: 100%;
+    background-color: #ff6f61;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#confirm-order:hover {
+    background-color: #ff4c39;
+}
+
+/* Confirmation Message Styling */
+#confirmation-message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Owner Login Logo Styling */
+.owner-login-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Menu Section Headings Color */
+.menu-section h3 {
+    color: #ff6f61; /* Customize this color as needed */
+    font-size: 1.8em; /* Customize the font size as needed */
+}
+
+/* Login Container Styling */
+.login-container {
+    width: 300px;
+    margin-top: 50px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.login-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
