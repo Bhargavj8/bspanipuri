@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateCart() {
         const cartItems = document.getElementById('cart-items');
+        if (!cartItems) return; // Avoid null reference error
         cartItems.innerHTML = '';
         let total = 0;
 
@@ -10,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (cart[itemName].quantity > 0) {
                 const li = document.createElement('li');
                 li.textContent = `${itemName} - ${cart[itemName].quantity} x ${cart[itemName].price} = ${cart[itemName].quantity * cart[itemName].price} rupees`;
-                
+
                 const quantitySpan = document.createElement('span');
                 quantitySpan.textContent = ` Quantity: ${cart[itemName].quantity} `;
-                
+
                 const removeButton = document.createElement('button');
                 removeButton.textContent = '-';
                 removeButton.addEventListener('click', () => {
