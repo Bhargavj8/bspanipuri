@@ -8,8 +8,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// Serve static files from the 'public' directory
+app.use(express.static(__dirname + '/public'));
+
+// MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
+// Define the Order schema and model
 const orderSchema = new mongoose.Schema({
     customerName: String,
     items: Array,
@@ -20,6 +25,7 @@ const orderSchema = new mongoose.Schema({
 
 const Order = mongoose.model('Order', orderSchema);
 
+// API route to handle order submission
 app.post('/submit-order', async (req, res) => {
     const newOrder = new Order(req.body);
     try {
@@ -30,6 +36,7 @@ app.post('/submit-order', async (req, res) => {
     }
 });
 
+// API route for admin login
 app.post('/admin-login', (req, res) => {
     const { username, password } = req.body;
     if (username === 'bhargavgouri@96' && password === 'bhargav@96') {
@@ -39,6 +46,7 @@ app.post('/admin-login', (req, res) => {
     }
 });
 
+// API route to fetch pending orders
 app.get('/orders', async (req, res) => {
     try {
         const orders = await Order.find({ status: 'Pending' });
@@ -48,6 +56,7 @@ app.get('/orders', async (req, res) => {
     }
 });
 
+// API route to update order status
 app.put('/orders/:id', async (req, res) => {
     const { status } = req.body;
     try {
@@ -58,14 +67,7 @@ app.put('/orders/:id', async (req, res) => {
     }
 });
 
+// Start the server
 app.listen(3000, () => {
     console.log('Server running on port 3000');
-});
-app.get('/orders', async (req, res) => {
-    try {
-        const orders = await Order.find({ status: 'Pending' });
-        res.json(orders);
-    } catch (err) {
-        res.status(500).send('Error fetching orders');
-    }
 });
